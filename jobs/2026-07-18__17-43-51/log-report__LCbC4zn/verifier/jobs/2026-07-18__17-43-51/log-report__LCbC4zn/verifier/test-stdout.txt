@@ -1,0 +1,23 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+collected 4 items
+
+../tests/test_outputs.py .F..                                            [100%]
+
+=================================== FAILURES ===================================
+________________________ test_total_requests_is_correct ________________________
+
+    def test_total_requests_is_correct():
+        """Success criterion 2: report the exact number of requests in access.log."""
+>       assert load_report()["total_requests"] == 6
+E       assert 999 == 6
+
+/tests/test_outputs.py:23: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../tests/test_outputs.py::test_report_is_a_json_object_with_the_required_fields
+PASSED ../tests/test_outputs.py::test_unique_ips_is_correct
+PASSED ../tests/test_outputs.py::test_top_path_is_correct
+FAILED ../tests/test_outputs.py::test_total_requests_is_correct - assert 999 ...
+========================= 1 failed, 3 passed in 0.01s ==========================
